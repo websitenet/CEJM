@@ -50,10 +50,15 @@
             <h4>1. Les conséquences du numérique sur l’offre des entreprises</h4><br/>
             <p>Arriver du numérique en entreprises = dématérialisation des documents</p>
             <table>
-                <tbody>
+                <thead onclick="deroule()">
+                    <tr>
+                        <th colspan="2"> <span id="arrowTab">▼</span> Avantages et risques de la dématérialisation</th>
+                    </tr>
+                </thead>
+                <tbody id="tab" style="display: none;">
                     <tr class="colonne">
-                        <td>Avantages de la dématérialisation</td>
-                        <td>Risques de la dématérialisation</td>
+                        <td>Avantages</td>
+                        <td>Risques</td>
                     </tr>    
                     <tr>
                         <td>
@@ -122,3 +127,16 @@
         color: #fff;
     }
 </style>
+
+<script>
+    function deroule() {
+        tab = document.getElementById("tab");
+        if (tab.style.display == "none") {
+            tab.style.display = "";
+            document.getElementById("arrowTab").innerHTML = "▲"
+        } else {
+            tab.style.display = "none";
+            document.getElementById("arrowTab").innerHTML = "▼"
+        }
+    }
+</script>
